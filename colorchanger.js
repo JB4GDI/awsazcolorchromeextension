@@ -1,68 +1,38 @@
-// Loop through all the div elements that have 'nav-elt-label' as the class.  One of those is the AZ name
+//Define the regions here
+const REGIONS = {
+	"N. Virginia": {fontColor: "#97c8f0", backgroundColor: "#00297b"},
+	"Ohio": {fontColor: "#d43547", backgroundColor: "#00155a"},
+	"N. California": {fontColor: "#be8b5e", backgroundColor: "#b80a31"},
+	"Oregon": {fontColor: "#ffeb07", backgroundColor: "#002587"},
+	"Hong Kong": {fontColor: "#d71811", backgroundColor: "#ffffff"},
+	"Mumbai": {fontColor: "#138808", backgroundColor: "#ff9933"},
+	"Seoul": {fontColor: "#359a3e", backgroundColor: "#be1135"},
+	"Singapore": {fontColor: "#ffffff", backgroundColor: "#ed2939"},
+	"Sydney": {fontColor: "#262873", backgroundColor: "#f0ba19"},
+	"Tokyo": {fontColor: "#ffffff", backgroundColor: "#4b0082"},
+	"Central": {fontColor: "#d52b1e", backgroundColor: "#ffffff"},
+	"Frankfurt": {fontColor: "#fccf00", backgroundColor: "#ff0000"},
+	"Ireland": {fontColor: "#ff883e", backgroundColor: "#169b62"},
+	"London": {fontColor: "#cf142b", backgroundColor: "#ffffff"},
+	"Paris": {fontColor: "#ed2939", backgroundColor: "#002395"},
+	"Stockholm": {fontColor: "#ffc90e", backgroundColor: "#2452bd"},
+	"S&atilde;o Paulo": {fontColor: "#294292", backgroundColor: "#212125"}
+};
 
-$("div.nav-elt-label").each(function() {
-
-	// Look for a text match on the AZ name
-	if ($(this).text() == "N. Virginia") {
-
-		// Once we find the name, change the color by directly injecting css as an attribute.  Tricky!
-		$(this).attr("style", "color: #97c8f0 !important\; font-weight: bold !important\; text-shadow: none !important")
-
-		// Now that we found out which AZ we're in, change the background color to match the flag of this place
-		$("#nav-regionMenu").attr("style", "background-color: #00297b !important")
-
-	} else if ($(this).text() == "Ohio") {
-		$(this).attr("style", "color: #d43547 !important\; font-weight: bold !important\; text-shadow: none !important")
-		$("#nav-regionMenu").attr("style", "background-color: #00155a !important")
-	} else if ($(this).text() == "N. California") {
-		$(this).attr("style", "color: #be8b5e !important\; font-weight: bold !important\; text-shadow: none !important")
-		$("#nav-regionMenu").attr("style", "background-color: #b80a31 !important")
-	} else if ($(this).text() == "Oregon") {
-		$(this).attr("style", "color: #ffeb07 !important\; font-weight: bold !important\; text-shadow: none !important")
-		$("#nav-regionMenu").attr("style", "background-color: #002587 !important")
-	} else if ($(this).text() == "Oregon") {
-		$(this).attr("style", "color: #ffeb07 !important\; font-weight: bold !important\; text-shadow: none !important")
-		$("#nav-regionMenu").attr("style", "background-color: #002587 !important")
-	} else if ($(this).text() == "Hong Kong") {
-		$(this).attr("style", "color: #d71811 !important\; font-weight: bold !important\; text-shadow: none !important")
-		$("#nav-regionMenu").attr("style", "background-color: #ffffff !important")
-	} else if ($(this).text() == "Mumbai") {
-		$(this).attr("style", "color: #138808 !important\; font-weight: bold !important\; text-shadow: none !important")
-		$("#nav-regionMenu").attr("style", "background-color: #ff9933 !important")
-	} else if ($(this).text() == "Seoul") {
-		$(this).attr("style", "color: #359a3e !important\; font-weight: bold !important\; text-shadow: none !important")
-		$("#nav-regionMenu").attr("style", "background-color: #be1135 !important")
-	} else if ($(this).text() == "Singapore") {
-		$(this).attr("style", "color: #ffffff !important\; font-weight: bold !important\; text-shadow: none !important")
-		$("#nav-regionMenu").attr("style", "background-color: #ed2939 !important")
-	} else if ($(this).text() == "Sydney") {
-		$(this).attr("style", "color: #262873 !important\; font-weight: bold !important\; text-shadow: none !important")
-		$("#nav-regionMenu").attr("style", "background-color: #f0ba19 !important")
-	} else if ($(this).text() == "Tokyo") {
-		$(this).attr("style", "color: #ffffff !important\; font-weight: bold !important\; text-shadow: none !important")
-		$("#nav-regionMenu").attr("style", "background-color: #4b0082 !important")
-	} else if ($(this).text() == "Central") {
-		$(this).attr("style", "color: #d52b1e !important\; font-weight: bold !important\; text-shadow: none !important")
-		$("#nav-regionMenu").attr("style", "background-color: #ffffff !important")
-	} else if ($(this).text() == "Frankfurt") {
-		$(this).attr("style", "color: #fccf00  !important\; font-weight: bold !important\; text-shadow: none !important")
-		$("#nav-regionMenu").attr("style", "background-color: #ff0000 !important")
-	} else if ($(this).text() == "Ireland") {
-		$(this).attr("style", "color: #ff883e  !important\; font-weight: bold !important\; text-shadow: none !important")
-		$("#nav-regionMenu").attr("style", "background-color: #169b62 !important")
-	} else if ($(this).text() == "London") {
-		$(this).attr("style", "color: #cf142b  !important\; font-weight: bold !important\; text-shadow: none !important")
-		$("#nav-regionMenu").attr("style", "background-color: #ffffff !important")
-	} else if ($(this).text() == "Paris") {
-		$(this).attr("style", "color: #ed2939  !important\; font-weight: bold !important\; text-shadow: none !important")
-		$("#nav-regionMenu").attr("style", "background-color: #002395 !important")
-	} else if ($(this).text() == "Stockholm") {
-		$(this).attr("style", "color: #ffc90e  !important\; font-weight: bold !important\; text-shadow: none !important")
-		$("#nav-regionMenu").attr("style", "background-color: #2452bd !important")
-	} else if ($(this).text() == "S&atilde;o Paulo") {
-		$(this).attr("style", "color: #294292  !important\; font-weight: bold !important\; text-shadow: none !important")
-		$("#nav-regionMenu").attr("style", "background-color: #212125 !important")
-	}
-
-
-});
+//You can access the nav-regionMenu directly
+const regionMenuParent = document.getElementById('nav-regionMenu');
+//Now you can access the label directly, no need for a loop
+const label = regionMenuParent.querySelector('div.nav-elt-label');
+//Pull out the region text
+const regionText = label.textContent;
+//Check if you have that region defined
+if (REGIONS.hasOwnProperty(regionText)) {
+	//Apply the styles
+	let style = REGIONS[regionText];
+	label.style.cssText = `color: ${style.fontColor} !important; font-weight: bold !important; text-shadow: none !important`;
+	regionMenuParent.style.cssText = `background-color: ${style.backgroundColor} !important`;
+} else {
+	//Warn the user they are missing a region
+	//TODO Make the regions a localStorage variable so the user could add their own colours / regions without your input
+	console.error(`Missing Region: ${regionText}`);
+}
