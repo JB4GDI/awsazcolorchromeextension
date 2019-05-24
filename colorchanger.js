@@ -36,3 +36,14 @@ if (REGIONS.hasOwnProperty(regionText)) {
 	//TODO Make the regions a localStorage variable so the user could add their own colours / regions without your input
 	console.error(`Missing Region: ${regionText}`);
 }
+
+regionMenuParent.addEventListener('click', function () {
+	document.querySelectorAll('#regionMenuContent > a').forEach(item => {
+		let menuRegionText = item.textContent.replace(/.*?\((.*?)\)/, "$1");
+		let style = REGIONS[menuRegionText];
+		if (!style) return;
+		let div = document.createElement('span');
+		div.style.cssText = `background: linear-gradient(45deg, ${style.fontColor} 50%, ${style.backgroundColor} 50%); width: 16px; height:16px; display: inline-block; margin:0; margin-right: 2px;`;
+		item.prepend(div);
+	})
+});
