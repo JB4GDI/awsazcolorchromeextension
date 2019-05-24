@@ -3,7 +3,7 @@
 	"manifest_version": 2,
 
 	"name": "AWS AZ Color Highlights",
-	"description": "In the AWS console's top right nav bar, where the AZ name appears, the text will be uniquely colored to make it easier to know what AZ you are in at all times.",
+	"description": "In the AWS console's top right nav bar, the AZ name will be uniquely colored so you'll know what AZ you are in at all times.",
 	"version": "1.00",
 	"author": "Jaime Barriga",
 
