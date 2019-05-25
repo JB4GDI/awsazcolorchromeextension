@@ -4,7 +4,7 @@
 
 	"name": "AWS Region Color Highlights",
 	"description": "In the AWS console's top right nav bar, the Region name will be uniquely colored so you'll know what Region you're in at all times.",
-	"version": "1.01",
+	"version": "1.02",
 	"author": "Jaime Barriga",
 
 	"icons": {
