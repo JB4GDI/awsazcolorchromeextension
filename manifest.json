@@ -18,7 +18,7 @@
 
 		{
 			"matches": ["https://*.aws.amazon.com/*"],
-			"js": ["jquery-3.4.1.slim.min.js", "colorchanger.js"],
+			"js": ["colorchanger.js"],
 			"run_at": "document_end"
 		}
 
