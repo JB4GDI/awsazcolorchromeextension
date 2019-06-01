@@ -1,5 +1,6 @@
 //Define the regions here
 const REGIONS = {
+	"Global": {fontColor: "#ffffff", backgroundColor: "#232f3e"},
 	"N. Virginia": {fontColor: "#97c8f0", backgroundColor: "#00297b"},
 	"Ohio": {fontColor: "#d43547", backgroundColor: "#00155a"},
 	"N. California": {fontColor: "#be8b5e", backgroundColor: "#b80a31"},
@@ -34,7 +35,7 @@ if (REGIONS.hasOwnProperty(regionText)) {
 } else {
 	//Warn the user they are missing a region
 	//TODO Make the regions a localStorage variable so the user could add their own colours / regions without your input
-	console.error(`Missing Region: ${regionText}`);
+	console.error(`AWS Region Color Changer Extension is missing the region: ${regionText}`);
 }
 
 regionMenuParent.addEventListener('click', function () {
