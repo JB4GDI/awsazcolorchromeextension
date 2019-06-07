@@ -17,6 +17,8 @@ const REGIONS = {
 	"London": {fontColor: "#cf142b", backgroundColor: "#ffffff"},
 	"Paris": {fontColor: "#ed2939", backgroundColor: "#002395"},
 	"Stockholm": {fontColor: "#ffc90e", backgroundColor: "#2452bd"},
+	"US-Gov-West": {fontColor: "#ffc90e", backgroundColor: "#33335F"},
+	"US-Gov-East": {fontColor: "#ffc90e", backgroundColor: "#9B1C2C"},
 	"S&atilde;o Paulo": {fontColor: "#294292", backgroundColor: "#212125"}
 };
 
